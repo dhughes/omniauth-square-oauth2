@@ -36,6 +36,10 @@ module OmniAuth
       end
 
       def build_access_token
+        puts ">>>> got here 1111"
+        binding.pry
+        puts ">>>> got here 2222"
+
         connect_client = client.dup
         connect_client.site = options.client_options.site
         auth_params = {
