@@ -26,6 +26,10 @@ module OmniAuth
         { raw_info: raw_info }
       end
 
+      def callback_url
+        full_host + script_name + callback_path
+      end
+
       def build_access_token
         connect_client = client.dup
         connect_client.site = options.client_options.connect_site
