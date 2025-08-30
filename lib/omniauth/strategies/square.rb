@@ -7,8 +7,9 @@ module OmniAuth
     class Square < OmniAuth::Strategies::OAuth2
       option :name, 'square'
       option :client_options, {
-        site: 'https://squareup.com/',
-        connect_site: 'https://connect.squareup.com',
+        # site: 'https://squareup.com/',
+        # connect_site: 'https://connect.squareup.com',
+        site: 'https://connect.squareup.com',
         authorize_url: 'oauth2/authorize',
         token_url: 'oauth2/token'
       }
@@ -38,7 +39,7 @@ module OmniAuth
 
       def build_access_token
         connect_client = client.dup
-        connect_client.site = options.client_options.connect_site
+        # connect_client.site = options.client_options.connect_site
         auth_params = {
           redirect_uri: callback_url,
           client_id: options.client_id,
