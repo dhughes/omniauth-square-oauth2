@@ -39,7 +39,6 @@ module OmniAuth
 
       def build_access_token
         connect_client = client.dup
-        # connect_client.site = options.client_options.connect_site
         connect_client.site = options.client_options.site
         auth_params = {
           redirect_uri: callback_url,
@@ -56,7 +55,7 @@ module OmniAuth
         )
       end
 
-      private
+  private
 
       def raw_info
         @raw_info ||= access_token.get('/v2/merchants').parsed
