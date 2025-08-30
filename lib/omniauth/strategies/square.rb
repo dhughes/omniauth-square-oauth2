@@ -9,8 +9,8 @@ module OmniAuth
       option :client_options, {
         site: 'https://squareup.com/',
         connect_site: 'https://connect.squareup.com',
-        authorize_url: '/oauth2/authorize',
-        token_url: '/oauth2/token'
+        authorize_url: 'oauth2/authorize',
+        token_url: 'oauth2/token'
       }
 
       uid { raw_info['merchant'][0]['id'] }
@@ -60,10 +60,6 @@ module OmniAuth
           value.nil? || (value.respond_to?(:empty?) && value.empty?)
         end
       end
-
-      # def callback_url
-      #   full_host + callback_path
-      # end
     end
   end
 end
