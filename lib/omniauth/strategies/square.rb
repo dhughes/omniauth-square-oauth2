@@ -55,6 +55,7 @@ module OmniAuth
         #   ),
         #   deep_symbolize(options.auth_token_params)
         # )
+        return build_access_token_mine
       end
 
       def build_access_token_mine
