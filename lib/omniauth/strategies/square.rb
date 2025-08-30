@@ -57,9 +57,9 @@ module OmniAuth
         end
       end
 
-      def callback_url
-        full_host + callback_path
-      end
+      # def callback_url
+      #   full_host + callback_path
+      # end
     end
   end
 end
