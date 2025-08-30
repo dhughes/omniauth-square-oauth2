@@ -40,25 +40,6 @@ module OmniAuth
         binding.pry
         puts ">>>> got here 2222"
 
-        # connect_client = client.dup
-        # connect_client.site = options.client_options.site
-        # auth_params = {
-        #   redirect_uri: callback_url,
-        #   client_id: options.client_id,
-        #   client_secret: options.client_secret,
-        #   grant_type: 'authorization_code'
-        # }.merge(token_params.to_hash(symbolize_keys: true))
-        # connect_client.auth_code.get_token(
-        #   request.params['code'],
-        #   auth_params.merge(
-        #     token_params.to_hash(symbolize_keys: true)
-        #   ),
-        #   deep_symbolize(options.auth_token_params)
-        # )
-        return build_access_token_mine
-      end
-
-      def build_access_token_mine
         connect_client = client.dup
         connect_client.site = options.client_options.site
         auth_params = {
@@ -74,6 +55,8 @@ module OmniAuth
           ),
           deep_symbolize(options.auth_token_params)
         )
+
+        super
       end
 
   private
